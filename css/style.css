@@ -94,7 +94,6 @@ section h2 {
 .menu ul {
   list-style: none;
   padding: 0;
-  animation: fadeIn 1s ease-in-out;
 }
 
 .menu li {
@@ -131,7 +130,6 @@ section h2 {
   padding: 1rem;
   margin-top: 0.5rem;
   text-align: center;
-  animation: fadeIn 1s ease-in-out;
   display: flex;
   gap: 5px;
   justify-content: center;
@@ -191,12 +189,10 @@ section h2 {
   flex-shrink: 0;
   object-fit: cover;
   user-select: none;
-  animation: fadeIn 1s ease-in-out;
 }
 
 .indicators {
   text-align: center;
-  animation: fadeIn 1s ease-in-out;
 }
 
 .dot {
