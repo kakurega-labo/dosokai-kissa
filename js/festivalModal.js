@@ -1,5 +1,3 @@
-//js/festivalModal.js
-
 const DEFAULT_STALL_IMAGE = "image/no_image_logo.png";
 
 const festivalModalHTML = `
@@ -10,7 +8,7 @@ const festivalModalHTML = `
       </button>
       <h2>文化祭マップ・模擬店一覧</h2>
       <div id="searchWrapper">
-       <input type="text" id="festivalSearch" placeholder="キーワード検索(模擬店・教室等)">
+       <input type="text" id="festivalSearch" placeholder="キーワード検索">
        <button id="searchButton">検索</button>
       </div>
       <div id="festivalContent">読み込み中...</div>
@@ -18,35 +16,35 @@ const festivalModalHTML = `
   </div>
 `;
 
+let currentFestivalPage = 1;
+const ITEMS_PER_PAGE = 12;
+
 function openFestivalModal() {
   const existing = document.getElementById("festivalModal");
   if (existing) existing.remove();
 
   document.body.insertAdjacentHTML("beforeend", festivalModalHTML);
+  document.body.style.overflow = "hidden"; // 背景スクロール禁止
+
+  // 背景タップ・クリックでポップアップを閉じる
+  const modal = document.getElementById("festivalModal");
+  if (modal) {
+    modal.addEventListener("click", function (e) {
+      if (e.target === this) {
+        closeFestivalModal();
+      }
+    });
+  }
 
   if (typeof FES_DATA !== "undefined") {
-    const container = document.getElementById("festivalContent");
-    container.innerHTML = createFestivalHTML(FES_DATA);
+    renderFestivalPage(FES_DATA, currentFestivalPage);
   }
 }
 
 function closeFestivalModal() {
   const modal = document.getElementById("festivalModal");
   if (modal) modal.remove();
-}
-
-let currentFestivalPage = 1;
-const ITEMS_PER_PAGE = 2; 
-
-function openFestivalModal() {
-  const existing = document.getElementById("festivalModal");
-  if (existing) existing.remove();
-
-  document.body.insertAdjacentHTML("beforeend", festivalModalHTML);
-
-  if (typeof FES_DATA !== "undefined") {
-    renderFestivalPage(FES_DATA, currentFestivalPage);
-  }
+  document.body.style.overflow = ""; // 背景スクロール禁止解除
 }
 
 function renderFestivalPage(data, page) {
@@ -65,7 +63,6 @@ function renderFestivalPage(data, page) {
     });
   });
 
-  const ITEMS_PER_PAGE = 12;
   const totalPages = Math.ceil(flatItems.length / ITEMS_PER_PAGE);
   const start = (page - 1) * ITEMS_PER_PAGE;
   const end = start + ITEMS_PER_PAGE;
@@ -95,7 +92,6 @@ function renderFestivalPage(data, page) {
   if (oldPagination) oldPagination.remove(); 
   modalBox.insertAdjacentHTML("beforeend", createPaginationControls(page, totalPages));
 }
-
 
 function createPaginationControls(current, total) {
   return `
