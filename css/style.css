@@ -469,8 +469,8 @@ footer {
 
 #festivalModalBox,
 #favoriteModalBox {
- /* min-height: 610px;
-  padding-bottom: 1rem; /*
+ /* min-height: 610px; */
+ /* padding-bottom: 1rem; /*
 }
 
 #festivalSearch {
@@ -630,6 +630,7 @@ footer {
 .stall-calc-box {
   min-height: 610px;
 }
+
 .stall-header {
   display: flex;
   align-items: center;
