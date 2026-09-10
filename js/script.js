@@ -84,10 +84,11 @@
      window.scrollTo({ top: 0, behavior: "smooth" });
    });
 
-(function checkOpenNow() {
-  const now = new Date();
+ function checkOpenNow() {
   const openNowMsg = document.getElementById("openNowMessage");
+  if (!openNowMsg) return;
 
+  const now = new Date();
   const openPeriods = [
     { date: "2026-09-19", start: "10:00", end: "16:00" },
     { date: "2026-09-20", start: "10:00", end: "16:00" },
@@ -101,14 +102,19 @@
     nowTimeStr >= p.start && nowTimeStr <= p.end
   );
 
+  openNowMsg.classList.remove('status-green', 'status-red');
+
   if (period) {
-    openNowMsg.textContent = ` 開催中（${period.start}〜${period.end}）`;
+    openNowMsg.textContent = '開催中';
     openNowMsg.classList.add('status-green');
   } else {
-    openNowMsg.textContent = `準備中`;
+    openNowMsg.textContent = '準備中';
     openNowMsg.classList.add('status-red');
   }
-})();
+}
+
+checkOpenNow();
+setInterval(checkOpenNow, 10000);
 
 function scrollToSection(id) {
   const target = document.querySelector(`.${id}`) || document.getElementById(id);
