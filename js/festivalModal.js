@@ -3,7 +3,7 @@ const DEFAULT_STALL_IMAGE = "image/no_image_logo.png";
 const festivalModalHTML = `
   <div class="modal-overlay" id="festivalModal">
     <div class="modal-box" id="festivalModalBox">
-      <h2>文化祭マップ・模擬店一覧</h2>
+      <h2>模擬店一覧</h2>
       <div id="festivalContent">読み込み中...</div>
     </div>
   </div>
