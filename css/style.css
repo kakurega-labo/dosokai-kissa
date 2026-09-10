@@ -88,6 +88,10 @@ section p {
   }
 }
 
+.gallery {
+  padding: 0;
+}
+
 .menu {
   background-repeat: no-repeat;
   background-size: cover;
