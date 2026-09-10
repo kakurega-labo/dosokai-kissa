@@ -643,8 +643,10 @@ footer {
   margin-right: 8px;
 }
 
-.compact-value {
-  font-size: 1.1rem;
+.compact-value,
+.compact-date,
+.compact-intro{
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -655,28 +657,15 @@ footer {
   flex-wrap: wrap;
 }
 
-.status-badge {
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.compact-date {
-  font-size: 1rem;
-  font-weight: bold;
-}
-
 .intro-title {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0.5rem 0 0.2rem 0;
   border-left: 4px solid #4f6b64;
   padding-left: 8px;
 }
 
-.intro-text {
+.compact-intro {
   margin: 0;
   font-size: 0.95rem;
   color: #444;
