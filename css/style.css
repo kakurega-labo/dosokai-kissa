@@ -24,7 +24,6 @@ header {
 header p {
  margin: 0;
  font-size: 70px;
-  animation: fadeIn 1.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -70,10 +69,6 @@ section {
 section h2 {
   border-bottom: 2px solid #000;
   margin: 0;
-}
-
-section p {
-  animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes slideUp {
