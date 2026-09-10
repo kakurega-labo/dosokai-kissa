@@ -469,8 +469,8 @@ footer {
 
 #festivalModalBox,
 #favoriteModalBox {
-  min-height: 610px;
-  padding-bottom: 1rem;
+ /* min-height: 610px;
+  padding-bottom: 1rem; /*
 }
 
 #festivalSearch {
@@ -548,7 +548,6 @@ footer {
 .pagination-wrapper {
   text-align: center;
   margin-top: 1rem;
-  position: absolute;
   bottom: 1rem;
   left: 0;
   width: 100%;
@@ -629,7 +628,7 @@ footer {
 }
 
 .stall-calc-box {
-  min-height: 610px;
+  /* min-height: 610px; /*
 }
 .stall-header {
   display: flex;
@@ -872,106 +871,4 @@ footer {
 .open-ad {
   background: #1A73E9;
   color: #fff;
-}
-
-#stampModalBox {
- min-height: 610px;
- padding-bottom: 1rem;
-}
-
-.stamp-row {
-  padding: 0.5em;
-}
-
-.stamp-display img {
-  width: 80px;
-  height: auto;
-}
-
-.checkin-btn {
- padding: 0.5rem;
- background: red;
- border: none;
- color: white;
- font-weight: bold;
- margin-bottom: 0.5em;
-}
-
-/* スタンプ帳レイアウト */
-#stampArea {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
-}
-.stamp-row {
-  width: 30%;
-  min-width: 120px;
-  min-height: 120px;
-  background: #f9f9f9;
-  border: 2px dashed #999;
-  text-align: center;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.stamp-display img {
-  width: 80px;
-  height: auto;
-}
-.checkin-btn.checked {
-  background-color: #ccc;
-  color: white;
-}
-
-/* スタンプ台紙演出 */
-.stamp-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.05);
-  background: #fff;
-  border: 3px solid #4f6b64;
-  padding: 1rem;
-  border-radius: 15px;
-  z-index: 9999;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  animation: popFade 2s ease forwards;
-}
-@keyframes popFade {
-  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.25); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(0.75); }
-  /* 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); } */
-}
-
-.popup-close-btn {
-  margin-top: 0.5em;
-  padding: 0.4em 1em;
-  background: #4f6b64;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.popup-close-btn:hover {
-  background: #3e574e;
-}
-
-.stamp-popup.manual-popup {
-  animation: popFade 2s ease forwards;
-  opacity: 1;
-}
-@keyframes popFade {
-  100% { opacity: 1; transform: translate(-50%, -50%) scale(0.75); }
-
-}
-
-.stamp-popup p {
-  font-size: 1.5rem;
-  margin: 0;
 }
