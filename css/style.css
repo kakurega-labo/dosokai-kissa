@@ -699,77 +699,11 @@ footer {
   resize: vertical;
 }
 
-#ghost-error {
-  padding: 2rem;
-  text-align: center;
-  color: #888;
-  font-family: sans-serif;
-}
-#ghost-error h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-#ghost-secret {
-  margin-top: 2rem;
-  width: 100px;
-  height: 100px;
-  opacity: 0.01;
-  margin: 0 auto;
-}
-
-#staff-login {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#staff-login form {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  text-align: center;
-}
-
-#staff-login input {
-  display: block;
-  margin: 1rem auto;
-  padding: 0.5rem;
-  width: 200px;
-}
-
 .menu-title {
   font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: #4f6b64;
-}
-
-.errorContainer {
-  margin: 50px auto 40px auto;
-  width: 600px;
-  text-align: center;
- }
-
-.errorContainer h1 {
-  width: 800px;
-  position: relative;
-  left: -100px;
-  letter-spacing: -1px;
-  line-height: 60px;
-  font-size: 60px;
-  font-weight: 200;
-  margin: 0px 0 50px 0;
-  text-shadow: 0 1px 0 #fff;
-}
-
-.errorContainer p {
-   color: rgba(0, 0, 0, 0.5);
-   margin: 20px 0;
-   line-height: 1.6;
 }
 
 .ad-name {
