@@ -1,12 +1,15 @@
 // js/staff-protect2.js
 
 async function updateStatus() {
-  const adminKey = sessionStorage.getItem('staff_pass');
+  let adminKey = sessionStorage.getItem('staff_pass');
 
   if (!adminKey) {
-    alert("パスワードが設定されていません。ページを再読み込みしてください。");
-    location.reload();
-    return;
+    adminKey = prompt("パスワードを入力してください");
+    if (adminKey) {
+      sessionStorage.setItem('staff_pass', adminKey);
+    } else {
+      return;
+    }
   }
 
   const status = document.getElementById('statusSelect').value;
@@ -23,6 +26,5 @@ async function updateStatus() {
   } catch (error) {
     alert('送信エラー：パスワードが正しいか確認してください。');
     sessionStorage.removeItem('staff_pass');
-    location.reload();
   }
 }
