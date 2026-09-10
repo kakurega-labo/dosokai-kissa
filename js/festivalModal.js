@@ -3,9 +3,6 @@ const DEFAULT_STALL_IMAGE = "image/no_image_logo.png";
 const festivalModalHTML = `
   <div class="modal-overlay" id="festivalModal">
     <div class="modal-box" id="festivalModalBox">
-      <button class="modal-close" onclick="closeFestivalModal()">
-      <img src="image/Close.svg" alt="閉じる" class="modal-close-icon">
-      </button>
       <h2>文化祭マップ・模擬店一覧</h2>
       <div id="searchWrapper">
        <input type="text" id="festivalSearch" placeholder="キーワード検索">
@@ -24,9 +21,8 @@ function openFestivalModal() {
   if (existing) existing.remove();
 
   document.body.insertAdjacentHTML("beforeend", festivalModalHTML);
-  document.body.style.overflow = "hidden"; // 背景スクロール禁止
+  document.body.style.overflow = "hidden";
 
-  // 背景タップ・クリックでポップアップを閉じる
   const modal = document.getElementById("festivalModal");
   if (modal) {
     modal.addEventListener("click", function (e) {
@@ -44,7 +40,7 @@ function openFestivalModal() {
 function closeFestivalModal() {
   const modal = document.getElementById("festivalModal");
   if (modal) modal.remove();
-  document.body.style.overflow = ""; // 背景スクロール禁止解除
+  document.body.style.overflow = "";
 }
 
 function renderFestivalPage(data, page) {
