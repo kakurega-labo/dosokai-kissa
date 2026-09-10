@@ -285,9 +285,8 @@ footer {
 .hamburger-title {
   font-weight: bold;
   font-size: 1rem;
-  margin: 0 0 0.8rem 0.2rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid #999;
+  margin: 0;
+  padding: 0.5rem;
 }
 
 .hamburger-wrapper {
