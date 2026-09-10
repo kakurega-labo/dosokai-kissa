@@ -231,37 +231,6 @@ footer {
   .logoimg {
     width: 200px;
   }
-
-  .nav {
-    font-size: 1.5rem;
-  }
-}
-
-.nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  border: none;
-  font-size: 2rem;
-  color: #000;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-
-.nav:hover {
-  background: rgba(255,255,255,0.9);
-}
-
-.nav.prev {
-  left: 10px;
-}
-
-.nav.next {
-  right: 10px;
 }
 
 #toTopBtn {
