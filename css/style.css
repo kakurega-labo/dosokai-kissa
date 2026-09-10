@@ -626,8 +626,6 @@ footer {
   width: 100%;
   background: #4f6b64;
   border-bottom: 4px solid #FFC107;
-  box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.2),
-              -5px -5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .stall-calc-box {
