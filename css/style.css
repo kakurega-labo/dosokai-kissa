@@ -469,7 +469,6 @@ footer {
 
 #festivalModalBox,
 #favoriteModalBox {
-  min-height: 610px;
   padding-bottom: 1rem; 
 }
 
@@ -628,7 +627,7 @@ footer {
 }
 
 .stall-calc-box {
-  min-height: 610px;
+  / *min-height: 610px; /*
 }
 
 .stall-header {
