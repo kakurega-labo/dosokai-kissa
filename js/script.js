@@ -102,7 +102,7 @@
   );
 
   if (period) {
-    openNowMsg.textContent = ` 営業中（${period.start}〜${period.end}）`;
+    openNowMsg.textContent = ` 開催中（${period.start}〜${period.end}）`;
     openNowMsg.classList.add('status-green');
   } else {
     openNowMsg.textContent = `準備中`;
