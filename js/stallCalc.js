@@ -3,11 +3,11 @@ const STALL_MENU = [
   { name: "カレーライス", price: 350 },
   { name: "フランクフルト", price: 150 },
   { name: "かけそば・うどん", price: 250 },
-  { name: "いそべ焼き(3個入り)", price: 150 },
-  { name: "焼き鳥(ﾂｸﾈ･ﾓﾓ･ｶﾜ/各1本)", price: 100 },
+  { name: "いそべ焼き(3個入)", price: 150 },
+  { name: "焼き鳥(各1本)", price: 100 },
   { name: "焼き鳥(5本セット)", price: 400 },
-  { name: "たこ焼き(3個入り)", price: 50 },
-  { name: "ドリンク・かき揚げ(各1個)", price: 50 }
+  { name: "たこ焼き(3個入)", price: 50 },
+  { name: "ドリンク(各1個)", price: 50 }
 ];
 
 const stallModalHTML = `
