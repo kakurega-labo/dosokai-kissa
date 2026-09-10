@@ -1,5 +1,3 @@
-// js/stallCalc.js
-
 const STALL_MENU = [
   { name: "焼きそば", price: 350 },
   { name: "カレーライス", price: 350 },
@@ -40,12 +38,24 @@ function openStallCalc() {
 
   if (document.getElementById("stallCalcModal")) return;
   document.body.insertAdjacentHTML("beforeend", stallModalHTML);
+  document.body.style.overflow = "hidden";
+
+  const modal = document.getElementById("stallCalcModal");
+  if (modal) {
+    modal.addEventListener("click", function (e) {
+      if (e.target === this) {
+        closeStallCalc();
+      }
+    });
+  }
+
   renderStallCalc();
 }
 
 function closeStallCalc() {
   const modal = document.getElementById("stallCalcModal");
   if (modal) modal.remove();
+  document.body.style.overflow = "";
 }
 
 function renderStallCalc() {
