@@ -206,7 +206,7 @@ function showFestivalDetail(stallKey) {
 
 function backToFestivalList() {
   const h2 = document.querySelector("#festivalModalBox h2");
-  if (h2) h2.textContent = "文化祭マップ・模擬店";
+  if (h2) h2.textContent = "文化祭マップ・模擬店一覧";
 
   renderFestivalPage(FES_DATA, currentFestivalPage);
 
