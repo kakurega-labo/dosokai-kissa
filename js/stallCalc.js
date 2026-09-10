@@ -13,9 +13,6 @@ const STALL_MENU = [
 const stallModalHTML = `
   <div class="modal-overlay" id="stallCalcModal">
     <div class="modal-box" id="stall-calc-box">
-      <button class="modal-close" onclick="closeStallCalc()">
-       <img src="image/Close.svg" alt="閉じる" class="modal-close-icon">
-      </button>
       <h2>模擬店計算</h2>
       <div class="stall-row">
         <div class="stall-name">メニュー名</div>
