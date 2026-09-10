@@ -628,7 +628,7 @@ footer {
 }
 
 .stall-calc-box {
-  /* min-height: 610px; /*
+  min-height: 610px;
 }
 .stall-header {
   display: flex;
