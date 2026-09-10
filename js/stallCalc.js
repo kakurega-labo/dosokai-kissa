@@ -13,7 +13,7 @@ const STALL_MENU = [
 const stallModalHTML = `
   <div class="modal-overlay" id="stallCalcModal">
     <div class="modal-box" id="stall-calc-box">
-      <h2>模擬店計算</h2>
+      <h2>飲食物計算</h2>
       <div class="stall-row">
         <div class="stall-name">メニュー名</div>
         <div class="stall-price">価格</div>
@@ -90,9 +90,9 @@ const waitForMenu = setInterval(() => {
   const menu = document.querySelector(".hamburger-menu");
   if (!menu) return;
 
-  if (!menu.innerHTML.includes("模擬店計算")) {
+  if (!menu.innerHTML.includes("飲食物計算")) {
     const btn = document.createElement("button");
-    btn.innerHTML = `模擬店計算`;
+    btn.innerHTML = `飲食物計算`;
     btn.onclick = openStallCalc;
     const favBtn = [...menu.querySelectorAll("button")].find(btn =>
       btn.innerText.includes("お気に入り")
