@@ -51,7 +51,7 @@ async function updateStatus() {
 
     await database.ref('status').set(status);
 
-    alert('混雑状況を反映しました');
+    alert('混雑状況を変更しました');
   } catch (error) {
     alert('送信エラー：パスワードが正しいか確認してください。');
     sessionStorage.removeItem('staff_pass');
