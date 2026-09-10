@@ -92,7 +92,7 @@ const waitForMenu = setInterval(() => {
 
   if (!menu.innerHTML.includes("模擬店計算")) {
     const btn = document.createElement("button");
-    btn.innerHTML = `<img src="image/Calc.svg" alt="">模擬店計算`;
+    btn.innerHTML = `模擬店計算`;
     btn.onclick = openStallCalc;
     const favBtn = [...menu.querySelectorAll("button")].find(btn =>
       btn.innerText.includes("お気に入り")
