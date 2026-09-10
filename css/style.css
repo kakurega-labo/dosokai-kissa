@@ -618,6 +618,11 @@ footer {
   font-style: normal;
 }
 
+.stall-counter button:hover {
+  background-color: #4f6b64;
+  color: #fff;
+}
+
 .total-price {
   margin-top: 1rem;
   font-weight: bold;
