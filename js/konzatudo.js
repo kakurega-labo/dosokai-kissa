@@ -1,4 +1,4 @@
-// js/staff-protect.js
+// js/konzatdo.js
 
 (async function() {
   document.body.style.display = 'none';
