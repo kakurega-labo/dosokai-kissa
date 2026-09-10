@@ -1,7 +1,6 @@
 // js/staff-protect.js
 
 (async function() {
-  // 検証が完了するまで画面を一時非表示にする
   document.body.style.display = 'none';
 
   let adminKey = sessionStorage.getItem('staff_pass');
@@ -10,25 +9,21 @@
     adminKey = prompt("パスワードを入力してください");
   }
 
-  // キャンセルまたは空文字の場合は即座にアクセス遮断
   if (!adminKey) {
-    showAccessDenied("アクセスが拒否されました。パスワードを入力してください。");
+    showAccessDenied("パスワードを入力してください。");
     return;
   }
 
-  // 入力されたパスワードが正しいかFirestoreで検証テスト
   try {
     await db.collection("settings").doc("auth_check").set({
       admin_key: adminKey
     });
 
-    // 検証成功：セッションに保存して画面を表示
     sessionStorage.setItem('staff_pass', adminKey);
     document.body.style.display = '';
   } catch (error) {
-    // 検証失敗（パスワード誤り）：セッション削除してアクセス遮断
     sessionStorage.removeItem('staff_pass');
-    showAccessDenied("パスワードが違います。アクセス権限がありません。");
+    showAccessDenied("パスワードが違います。");
   }
 
   function showAccessDenied(message) {
