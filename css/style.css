@@ -622,7 +622,6 @@ footer {
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 1.2rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .compact-row {
@@ -645,7 +644,7 @@ footer {
 
 .compact-value,
 .compact-date,
-.compact-intro{
+.compact-intro {
   font-size: 1rem;
   font-weight: bold;
 }
@@ -660,7 +659,6 @@ footer {
 
 .compact-intro {
   margin: 0;
-  font-size: 0.95rem;
   color: #444;
 }
 
