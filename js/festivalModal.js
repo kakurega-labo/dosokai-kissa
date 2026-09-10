@@ -4,10 +4,6 @@ const festivalModalHTML = `
   <div class="modal-overlay" id="festivalModal">
     <div class="modal-box" id="festivalModalBox">
       <h2>文化祭マップ・模擬店一覧</h2>
-      <div id="searchWrapper">
-       <input type="text" id="festivalSearch" placeholder="キーワード検索">
-       <button id="searchButton">検索</button>
-      </div>
       <div id="festivalContent">読み込み中...</div>
     </div>
   </div>
@@ -100,7 +96,7 @@ function createPaginationControls(current, total) {
 }
 
 function changeFestivalPage(direction) {
-    const flatItems = FES_DATA.flatMap(floor =>
+  const flatItems = FES_DATA.flatMap(floor =>
     floor.stalls.map(stall => ({
       floor: floor.floor,
       name: stall.name,
@@ -114,48 +110,6 @@ function changeFestivalPage(direction) {
   if (currentFestivalPage > totalPages) currentFestivalPage = totalPages;
 
   renderFestivalPage(FES_DATA, currentFestivalPage);
-}
-
-document.addEventListener("click", function (e) {
-  if (e.target && e.target.id === "searchButton") {
-    runFestivalSearch(); 
-  }
-});
-
-document.addEventListener("input", function (e) {
-  if (e.target && e.target.id === "festivalSearch") {
-    runFestivalSearch(); 
-  }
-});
-
-function runFestivalSearch() {
-  const keyword = document.getElementById("festivalSearch").value.trim().toLowerCase();
-  const container = document.getElementById("festivalContent");
-
-  if (!keyword) {
-    renderFestivalPage(FES_DATA, 1);
-    return;
-  }
-
-  const filtered = FES_DATA.map(floor => ({
-    floor: floor.floor,
-    stalls: floor.stalls.filter(stall => {
-      const targetText = [
-        stall.name,
-        stall.place,
-        stall.group,
-        ...(stall.keywords || [])
-      ].join(" ").toLowerCase();
-      return targetText.includes(keyword);
-    })
-  })).filter(f => f.stalls.length > 0);
-
-  if (filtered.length === 0) {
-    container.innerHTML = `<p class="nohit-message">該当する模擬店・教室が見つかりませんでした。</p>`;
-    return;
-  }
-
-  renderFestivalPage(filtered, 1);
 }
 
 function showFestivalDetail(stallKey) {
@@ -189,9 +143,6 @@ function showFestivalDetail(stallKey) {
     </div>
   `;
 
-  const searchWrapper = document.getElementById("searchWrapper");
-  if (searchWrapper) searchWrapper.style.display = "none";
-
   const paginationWrapper = document.querySelector(".pagination-wrapper");
   if (paginationWrapper) paginationWrapper.style.display = "none";
 }
@@ -201,9 +152,6 @@ function backToFestivalList() {
   if (h2) h2.textContent = "文化祭マップ・模擬店一覧";
 
   renderFestivalPage(FES_DATA, currentFestivalPage);
-
-  const searchWrapper = document.getElementById("searchWrapper");
-  if (searchWrapper) searchWrapper.style.display = "flex";
 
   const paginationWrapper = document.querySelector(".pagination-wrapper");
   if (paginationWrapper) paginationWrapper.style.display = "block";
