@@ -103,10 +103,10 @@
   );
 
   if (period) {
-    openNowMsg.textContent = ` 現在、営業中です！（${period.start}〜${period.end}）`;
+    openNowMsg.textContent = ` 営業中（${period.start}〜${period.end}）`;
     openNowMsg.classList.add('status-green');
   } else {
-    openNowMsg.textContent = `現在、営業時間外です。`;
+    openNowMsg.textContent = `準備中`;
     openNowMsg.classList.add('status-red');
   }
 })();
