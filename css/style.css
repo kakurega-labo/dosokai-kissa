@@ -469,8 +469,8 @@ footer {
 
 #festivalModalBox,
 #favoriteModalBox {
- /* min-height: 610px; */
- /* padding-bottom: 1rem; /*
+  min-height: 610px;
+  padding-bottom: 1rem; 
 }
 
 #festivalSearch {
