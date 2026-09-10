@@ -650,13 +650,6 @@ footer {
   font-weight: bold;
 }
 
-.period-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
 .intro-title {
   font-weight: bold;
   font-size: 1rem;
