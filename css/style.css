@@ -148,6 +148,13 @@ section h3 {
  padding-bottom: 0;
 }
 
+.status-box,
+.status-note {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  
 .status-note {
   margin: 0;
   display: flex;
