@@ -425,33 +425,6 @@ footer {
   padding-bottom: 1rem; 
 }
 
-#festivalSearch {
-  flex: 1;
-  width: 100%;
-  font-size: 1rem;
-  box-sizing: border-box;
-  padding: 10px 14px;
-  border: 2px solid #4f6b64;
-  border-radius: 6px 0px 0px 6px;
-}
-
-#festivalSearch:focus::placeholder {
-  color: transparent;
-}
-
-#searchWrapper {
-  display: flex;
-  max-width: 100%
-}
-
-#searchButton {
-  padding: 8px 25px;
-  font-size: 16px;
-  background-color: #4f6b64;
-  color: white;
-  border: none;
-  border-radius: 0px 6px 6px 0px;
-}
 #festivalContent h3 {
   font-size: 1.1rem;
   margin-top: 1em;
