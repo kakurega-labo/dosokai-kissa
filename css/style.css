@@ -419,6 +419,8 @@ footer {
 .modal-box img {
   width: 100%;
   border-radius: 8px;
+  height: 220px;
+  object-fit: cover;
 }
 
 .modal-box p {
