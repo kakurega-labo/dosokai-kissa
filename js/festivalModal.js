@@ -134,10 +134,10 @@ function showFestivalDetail(stallKey) {
     <div class="stall-detail">
       <img src="${imgSrc}" alt="${found.name}" class="stall-thumbnail">
       <div class="stall-detail-text">
-        <p><strong>場所：</strong>${found.place}</p>
+        <p><strong>場所：</strong>${found.place || "―"}</p>
         <p><strong>団体：</strong>${found.group || "―"}</p>
-        <p><strong>フロア：</strong>${found.floor}</p>
-        <p style="border: none;"><strong>説明文：</strong>${found.description}</p>
+        <p><strong>フロア：</strong>${found.floor || "―"}</p>
+        <p style="border: none;"><strong>説明文：</strong>${found.description || "―"}</p>
       </div>
         <button onclick="backToFestivalList()" class="back-button">一覧に戻る</button>
     </div>
