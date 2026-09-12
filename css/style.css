@@ -585,6 +585,8 @@ footer {
 
 .stall-detail-text::-webkit-scrollbar-button {
   display: none;
+  width: 0;
+  height: 0;
 }
 
 .stall-calc-box {
