@@ -459,6 +459,7 @@ footer {
   border-bottom: 1px dashed #ccc;
   font-size: 0.8rem;
   display: flex;
+  align-items: center;
 }
 
 #festivalPagination {
