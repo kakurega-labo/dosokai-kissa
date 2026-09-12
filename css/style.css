@@ -1,6 +1,7 @@
 html {
   touch-action: manipulation;
   scrollbar-width: thin;
+  scrollbar-color: ffffff80;
 }
 
 html::-webkit-scrollbar {
