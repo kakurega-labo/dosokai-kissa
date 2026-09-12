@@ -744,6 +744,7 @@ footer {
   box-sizing: border-box;
   min-height: 44px;
   border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
  #output {
