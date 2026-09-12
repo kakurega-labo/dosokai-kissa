@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f6b64">
+  <title>免責事項 - 同窓会喫茶2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="image/apple-touch-icon.PNG">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="index.html" style="text-decoration: none;">
+        <img src="image/cafe-logo.PNG" alt="ロゴ" class="logoimg">
+      </a>
+    </div>
+  </header>
+
+  <section>
+    <div class="disclaimer-card">
+      <h2>免責事項</h2>
+
+      <div class="disclaimer-section-title">■ 当サイトについて</div>
+      <p>当サイトは、〇〇文化祭における「同窓会喫茶」の情報提供を目的とした非公式の特設サイトです。〇〇学校・〇〇同窓会および文化祭実行委員会等の公式組織とは一切関係がございません。</p>
+
+      <div class="disclaimer-section-title">■ 掲載情報について</div>
+      <p>当サイトに掲載している情報(提供メニュー、混雑状況、アクセス方法、イベント内容等)は、予告なく変更または中止される場合があります。情報の正確性については万全を期しておりますが、当サイトの情報を利用したことにより生じた、いかなる損害や不利益についても、当サイト運営者は一切の責任を負いかねます。</p>
+
+      <div class="disclaimer-section-title">■ 開催・提供内容について</div>
+      <ul>
+        <li>提供メニューの品切れや、混雑状況による入場制限・待ち時間の発生等について、当サイト運営者は責任を負いません。</li>
+        <li>事故、天災等の理由により、文化祭自体または当企画の開催が中止・変更となった場合、それに伴う損害等の補償はいたしかねます。</li>
+      </ul>
+
+      <div class="disclaimer-section-title">■ リンク・外部コンテンツについて</div>
+      <p>当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について当サイト運営者は一切の責任を負いません。</p>
+
+      <div class="disclaimer-section-title">■ 当サイトのメディア掲載について</div>
+      <p>当サイト内に掲載している画像・文章等の無断転載・無断使用を固く禁じます。</p>
+
+      <div class="disclaimer-section-title">■ 免責事項の変更</div>
+      <p>本免責事項の内容は、ユーザーに予告することなく変更することができるものとします。</p>
+
+      <div class="back-home-btn-wrapper">
+        <a href="index.html" class="back-home-btn">トップページへ戻る</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 同窓会喫茶</p>
+  </footer>
+
+<div class="hamburger-wrapper">
+  <button id="hamburgerBtn" aria-label="メニュー">
+    <img src="image/Menu.svg" alt="メニューを開く" class="hamburger-icon">
+  </button>
+  <nav id="hamburgerMenu" class="hamburger-menu">
+  <p class="hamburger-title">ようこそ</p>
+  <button class="close-menu-btn" aria-label="閉じる">
+    <img src="image/Close.svg" alt="閉じる" class="close-icon">
+  </button>
+    <button onclick="location.href='index.html#statusWrapper'">現在の状況</button>
+    <button onclick="location.href='index.html#menu'">ドリンクメニュー</button>
+    <button onclick="location.href='index.html#info'">概要</button>
+    <hr style="margin: 0.5rem 0; border: 0; border-top: 1px solid #999;">
+    <button onclick="openFestivalModal()">模擬店一覧</button>
+  </nav>
+</div>
+  <button id="toTopBtn" title="トップへ戻る">↑</button>
+  <script src="js/script.js"></script>
+  <script src="js/festivalData.js"></script>
+  <script src="js/festivalModal.js"></script>
+  <script src="js/stallCalc.js"></script>
+</body>
+</html>
