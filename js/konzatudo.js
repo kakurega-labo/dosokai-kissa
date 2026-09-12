@@ -32,9 +32,9 @@
       adminSection.innerHTML = `
     <label for="statusSelect">混雑状況を選択：</label>
     <select id="statusSelect">
-      <option value="green">空いてる</option>
+      <option value="green">混雑なし</option>
       <option value="yellow">やや混雑</option>
-      <option value="red">混雑中</option>
+      <option value="red">大変混雑</option>
     </select>
     <button onclick="updateStatus()">混雑状況を変更</button>
       `.trim();
