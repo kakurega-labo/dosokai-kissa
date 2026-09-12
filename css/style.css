@@ -580,6 +580,10 @@ footer {
   border-radius: 2px;
 }
 
+.stall-detail-text::-webkit-scrollbar-button {
+  display: none;
+}
+
 .stall-calc-box {
 }
 
