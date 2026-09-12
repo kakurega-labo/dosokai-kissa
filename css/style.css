@@ -835,3 +835,69 @@ footer {
   background: #1A73E9;
   color: #fff;
 }
+
+.disclaimer-card {
+  background: #fffefb;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.disclaimer-card h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #4f6b64;
+  padding-bottom: 0.5rem;
+  color: #333;
+}
+
+.disclaimer-section-title {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: #4f6b64;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  border-left: 4px solid #4f6b64;
+  padding-left: 8px;
+}
+
+.disclaimer-card p,
+.disclaimer-card ul {
+  margin: 0 0 0.8rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.disclaimer-card ul {
+  padding-left: 1.2rem;
+}
+
+.disclaimer-card li {
+  margin-bottom: 0.4rem;
+}
+
+.back-home-btn-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.back-home-btn {
+  display: inline-block;
+  background: #4f6b64;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  transition: background 0.2s;
+}
+
+.back-home-btn:hover {
+  background: #3e574f;
+}
