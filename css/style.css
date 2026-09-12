@@ -745,6 +745,7 @@ footer {
   min-height: 44px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  color: #000;
 }
 
  #output {
