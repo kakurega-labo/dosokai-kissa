@@ -874,13 +874,12 @@ footer {
 }
 
 .disclaimer-card ul {
-  padding-left: 1.2rem;
+  padding-left: 0;
 }
 
 .disclaimer-card li {
   margin-bottom: 0.4rem;
-  list-style-type: none;
-  padding-left: 0;
+  list-style: none;
 }
 
 .back-home-btn-wrapper {
