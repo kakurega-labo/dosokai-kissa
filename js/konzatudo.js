@@ -20,6 +20,26 @@
     });
 
     sessionStorage.setItem('staff_pass', adminKey);
+
+    document.title = '混雑状況管理ページ';
+    const headerTitle = document.querySelector('header h1');
+    if (headerTitle) {
+      headerTitle.textContent = '混雑状況切替画面';
+    }
+
+    const adminSection = document.querySelector('.admin');
+    if (adminSection) {
+      adminSection.innerHTML = `
+    <label for="statusSelect">混雑状況を選択：</label>
+    <select id="statusSelect">
+      <option value="green">空いてる</option>
+      <option value="yellow">やや混雑</option>
+      <option value="red">混雑中</option>
+    </select>
+    <button onclick="updateStatus()">混雑状況を変更</button>
+      `.trim();
+    }
+
     document.body.style.display = '';
   } catch (error) {
     sessionStorage.removeItem('staff_pass');
