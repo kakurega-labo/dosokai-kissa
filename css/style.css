@@ -879,6 +879,8 @@ footer {
 
 .disclaimer-card li {
   margin-bottom: 0.4rem;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .back-home-btn-wrapper {
