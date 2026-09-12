@@ -79,7 +79,7 @@ const FES_DATA = [
       { name: "作品展示", place: "409", group: "模型・鉄道研究部(模型班)", description: "", image: "" },
       { name: "作品展示", place: "410", group: "模型・鉄道研究部(鉄道班)", description: "", image: "" },
       { name: "活動紹介", place: "415", group: "競技かるた部", description: "", image: "" },
-      { name: "STAR・LINK ～SPACIA～", place: "416", group: "サイエンス部(天文班)" description: "", image: "" },
+      { name: "STAR・LINK ～SPACIA～", place: "416", group: "サイエンス部(天文班)", description: "", image: "" },
       { name: "ボドゲ海", place: "417", group: "ボードゲーム部", description: "", image: "" }
     ]
   },
