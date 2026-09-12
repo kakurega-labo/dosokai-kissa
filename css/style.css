@@ -23,6 +23,18 @@ html::-webkit-scrollbar-button {
   height: 0;
 }
 
+html::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 body {
   margin: 0;
   background: #fff8f0;
