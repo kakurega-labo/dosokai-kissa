@@ -32,9 +32,9 @@
       adminSection.innerHTML = `
     <label for="statusSelect">混雑状況を選択：</label>
     <select id="statusSelect">
-      <option value="green">混雑なし</option>
-      <option value="yellow">やや混雑</option>
-      <option value="red">大変混雑</option>
+      <option value="green">混雑なし(0~12席/3テーブル以下)</option>
+      <option value="yellow">やや混雑(13~22席/4~5テーブル)</option>
+      <option value="red">大変混雑(23~30席/5テーブル以上)</option>
     </select>
     <button onclick="updateStatus()">混雑状況を変更</button>
       `.trim();
