@@ -561,6 +561,23 @@ footer {
   width: 100%;
   background: #4f6b64;
   border-bottom: 4px solid #FFC107;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+.stall-detail-text::-webkit-scrollbar {
+  width: 4px;
+}
+
+.stall-detail-text::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.stall-detail-text::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
 }
 
 .stall-calc-box {
