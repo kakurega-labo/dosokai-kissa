@@ -94,10 +94,19 @@ const waitForMenu = setInterval(() => {
     const btn = document.createElement("button");
     btn.innerHTML = `飲食物計算`;
     btn.onclick = openStallCalc;
-    const favBtn = [...menu.querySelectorAll("button")].find(btn =>
-      btn.innerText.includes("お気に入り")
-    );
-    (favBtn || menu.lastElementChild).insertAdjacentElement("afterend", btn);
+
+    const hr = document.createElement("hr");
+    hr.style.cssText = "margin: 0.5rem 0; border: 0; border-top: 1px solid #999;";
+
+    const disclaimerBtn = document.createElement("button");
+    disclaimerBtn.innerHTML = `免責事項`;
+    disclaimerBtn.onclick = () => {
+      window.location.href = "disclaimer.html";
+    };
+
+    menu.appendChild(btn);
+    menu.appendChild(hr);
+    menu.appendChild(disclaimerBtn);
   }
 
   clearInterval(waitForMenu);
