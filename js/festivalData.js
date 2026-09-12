@@ -5,7 +5,7 @@ const FES_DATA = [
     floor: "B1階",
     stalls: [
       { name: "タピオカ販売", place: "家庭科室", group: "料理研究愛好会" },
-      { name: "アライ神社喫茶", place: "美術室", group: "美術・アートクラフト部" , keywords: ["喫茶", "びじゅつ", "びじゅつしつ", "美術部", "アート", "b1"]},
+      { name: "アライ神社喫茶", place: "美術室", group: "美術・アートクラフト部" },
       { name: "スタンド製作", place: "中学技術ルーム", group: "ものつくり部(建築班)" },
       { name: "活動紹介", place: "ものつくり系活動室①-②", group: "同上(自動車班)" },
       { name: "ミニSL乗車体験", place: "正門横・ミニSL工房", group: "同上(SL班)" },
