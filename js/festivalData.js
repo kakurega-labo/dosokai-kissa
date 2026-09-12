@@ -4,7 +4,7 @@ const FES_DATA = [
   {
     floor: "B1階",
     stalls: [
-      { name: "タピオカ販売", place: "家庭科室", group: "料理研究愛好会" },
+      { name: "タピオカ販売", place: "家庭科室", group: "料理研究愛好会", description: "", image: "" },
       { name: "アライ神社喫茶", place: "美術室", group: "美術・アートクラフト部" },
       { name: "スタンド製作", place: "中学技術ルーム", group: "ものつくり部(建築班)" },
       { name: "活動紹介", place: "ものつくり系活動室①-②", group: "同上(自動車班)" },
@@ -57,7 +57,7 @@ const FES_DATA = [
       { name: "森閑ノ道", place: "315", group: "5C" },
       { name: "Pirates of jungle", place: "316", group: "5B" },
       { name: "廃病院～日駒隔離病棟～", place: "317", group: "5A" },
-      { name: "同窓会喫茶", place: "319", group: "東工日駒同窓会",description: "卒業生の皆さんがゆったりと交流できる空間です。飲み物やお菓子をご用意してお待ちしています。", image: "image/cafe1.jpg" },
+      { name: "同窓会喫茶", place: "319", group: "東工日駒同窓会", description: "卒業生の皆さんがゆったりと交流できる空間です。飲み物やお菓子をご用意してお待ちしています。", image: "image/cafe1.jpg" },
       { name: "和風喫茶", place: "100周年記念ホール2階和室", group: "茶道部" },
       { name: "エスターバックス", place: "スチューデントホール", group: "2S" },
       { name: "いろはにぽてと", place: "スチューデントホール", group: "5C" },
