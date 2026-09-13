@@ -316,6 +316,10 @@ footer {
   .logoimg {
     width: 200px;
   }
+
+  .footer-brand {
+    justify-self: center;
+  }
 }
 
 #toTopBtn {
