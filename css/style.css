@@ -949,7 +949,7 @@ footer {
 }
 
 .donate-pop-lead {
-  margin: 0;
+  margin: 0 !important;
 }
 
 .back-home-btn-wrapper {
