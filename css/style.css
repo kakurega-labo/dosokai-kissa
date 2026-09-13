@@ -303,11 +303,13 @@ footer {
 
 @media screen and (max-width: 600px) {
   header p {
-    font-size: 2.5rem;
-    
+    font-size: 2.5rem; 
   }
   .menu li {
     font-size: 0.95rem;
+  }
+  .footer-brand {
+    justify-self: center;
   }
 }
 
@@ -315,10 +317,6 @@ footer {
 
   .logoimg {
     width: 200px;
-  }
-
-  .footer-brand {
-    justify-self: center;
   }
 }
 
