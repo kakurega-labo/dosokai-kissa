@@ -249,7 +249,6 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   text-align: left;
-  margin-bottom: 1.5rem;
 }
 
 .footer-logo {
