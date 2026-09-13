@@ -946,6 +946,10 @@ footer {
   list-style: none;
 }
 
+.donate-pop-lead {
+  margin: 0;
+}
+
 .back-home-btn-wrapper {
   text-align: center;
   margin-top: 2rem;
