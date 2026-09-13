@@ -916,6 +916,10 @@ footer {
   color: #333;
 }
 
+.disclaimer-card img {
+  width: 100%;
+}
+
 .disclaimer-section-title {
   font-weight: bold;
   font-size: 1.05rem;
