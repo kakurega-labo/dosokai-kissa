@@ -259,9 +259,13 @@ footer {
 .footer-heading {
   font-weight: bold;
   font-size: 1rem;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 0.3rem;
+}
+
+.footer-info p {
+  margin: 0;
 }
 
 .footer-links ul {
