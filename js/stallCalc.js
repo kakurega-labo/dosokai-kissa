@@ -104,9 +104,23 @@ const waitForMenu = setInterval(() => {
       window.location.href = "disclaimer.html";
     };
 
+    const statusBtn = document.createElement("button");
+    statusBtn.innerHTML = `状況判断`;
+    statusBtn.onclick = () => {
+      window.location.href = "status.html";
+    };
+
+    const donateBtn = document.createElement("button");
+    donateBtn.innerHTML = `維持会費`;
+    donateBtn.onclick = () => {
+      window.location.href = "donate.html";
+    };
+
     menu.appendChild(btn);
     menu.appendChild(hr);
     menu.appendChild(disclaimerBtn);
+    menu.appendChild(statusBtn);
+    menu.appendChild(donateBtn);
   }
 
   clearInterval(waitForMenu);
