@@ -118,9 +118,9 @@ const waitForMenu = setInterval(() => {
 
     menu.appendChild(btn);
     menu.appendChild(hr);
-    menu.appendChild(disclaimerBtn);
     menu.appendChild(statusBtn);
     menu.appendChild(donateBtn);
+    menu.appendChild(disclaimerBtn);
   }
 
   clearInterval(waitForMenu);
