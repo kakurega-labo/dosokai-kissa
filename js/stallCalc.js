@@ -98,12 +98,6 @@ const waitForMenu = setInterval(() => {
     const hr = document.createElement("hr");
     hr.style.cssText = "margin: 0.5rem 0; border: 0; border-top: 1px solid #999;";
 
-    const disclaimerBtn = document.createElement("button");
-    disclaimerBtn.innerHTML = `免責事項`;
-    disclaimerBtn.onclick = () => {
-      window.location.href = "disclaimer.html";
-    };
-
     const statusBtn = document.createElement("button");
     statusBtn.innerHTML = `状況判断`;
     statusBtn.onclick = () => {
@@ -114,6 +108,12 @@ const waitForMenu = setInterval(() => {
     donateBtn.innerHTML = `維持会費`;
     donateBtn.onclick = () => {
       window.location.href = "donate.html";
+    };
+
+    const disclaimerBtn = document.createElement("button");
+    disclaimerBtn.innerHTML = `免責事項`;
+    disclaimerBtn.onclick = () => {
+      window.location.href = "disclaimer.html";
     };
 
     menu.appendChild(btn);
