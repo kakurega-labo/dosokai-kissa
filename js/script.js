@@ -99,6 +99,7 @@ const statusText = {
 
    const now = new Date();
    const openPeriods = [
+     { date: "2026-09-14", start: "12:00", end: "15:00" },   
      { date: "2026-09-19", start: "10:00", end: "16:00" },
      { date: "2026-09-20", start: "10:00", end: "16:00" },
    ];
