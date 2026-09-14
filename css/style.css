@@ -973,9 +973,6 @@ footer {
   background: #3e574f;
 }
 
-/* ==========================================
-   status-tableのデザイン定義
-   ========================================== */
 .status-table-wrapper {
   width: 100%;
   overflow-x: auto;
