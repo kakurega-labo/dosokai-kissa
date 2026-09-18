@@ -178,6 +178,9 @@ section h3 {
   justify-content: flex-end;
   font-size: 10px;
   position: absolute;
+}
+
+.status-note {
   bottom: 20px; 
   right: 11px;
 }
