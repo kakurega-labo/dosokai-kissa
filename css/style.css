@@ -283,12 +283,14 @@ footer {
   font-size: 0.9rem;
 }
 
+.footer-info ul,
 .footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+.footer-info li,
 .footer-links li {
   margin-bottom: 0.4rem;
 }
