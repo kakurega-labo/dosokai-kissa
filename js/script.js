@@ -29,7 +29,6 @@ const slidesContainer = document.querySelector('.slides');
 const originalSlides = slidesContainer ? Array.from(slidesContainer.querySelectorAll('img')) : [];
 const totalOriginalSlides = originalSlides.length;
 
-// 無限ループ用に1枚目の画像のクローンを末尾に追加
 if (slidesContainer && totalOriginalSlides > 1) {
   const firstClone = originalSlides[0].cloneNode(true);
   slidesContainer.appendChild(firstClone);
@@ -57,7 +56,6 @@ function nextSlide() {
   slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
   updateDots(currentSlide);
 
-  // 最後のクローン画像に移動したら、アニメーション終了後に瞬時に先頭(0)へリセット
   if (currentSlide === totalOriginalSlides) {
     setTimeout(() => {
       slidesContainer.style.transition = 'none';
@@ -70,12 +68,10 @@ function nextSlide() {
 function prevSlide() {
   if (!slidesContainer || totalOriginalSlides === 0) return;
   if (currentSlide === 0) {
-    // 先頭から戻る場合は瞬時に末尾(クローン)に移動させてから前へスライド
     slidesContainer.style.transition = 'none';
     currentSlide = totalOriginalSlides;
     slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
     
-    // リフローを発生させてからアニメーション付きで移動
     void slidesContainer.offsetWidth;
     
     currentSlide--;
@@ -137,8 +133,8 @@ function checkOpenNow() {
   const now = new Date();
   const openPeriods = [
     { date: "2026-09-14", start: "12:00", end: "15:00" },   
-    { date: "2026-09-19", start: "10:00", end: "16:00" },
-    { date: "2026-09-20", start: "10:00", end: "16:00" },
+    { date: "2026-09-19", start: "09:00", end: "16:00" },
+    { date: "2026-09-20", start: "09:00", end: "16:00" },
   ];
 
   const pad = n => n.toString().padStart(2, "0");
