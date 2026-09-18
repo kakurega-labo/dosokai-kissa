@@ -293,6 +293,7 @@ footer {
 .footer-info li,
 .footer-links li {
   margin-bottom: 0.4rem;
+  font-size: 0.9rem;
 }
 
 .footer-links a {
