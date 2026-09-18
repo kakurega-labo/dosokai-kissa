@@ -279,7 +279,8 @@ footer {
 }
 
 .footer-info p {
-  margin: 0;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
 }
 
 .footer-links ul {
