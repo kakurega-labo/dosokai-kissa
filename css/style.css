@@ -170,7 +170,8 @@ section h3 {
   font-style: normal;
 }
   
-.status-note {
+.status-note,
+.gallery-note {
   margin: 0;
   display: flex;
   justify-content: flex-end;
@@ -179,7 +180,7 @@ section h3 {
   position: absolute;
 }
 
-.stutus-note gallery {
+.gallery-note {
   bottom: 23px;
   right: -4px;
 }
