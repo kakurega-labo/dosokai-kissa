@@ -178,6 +178,7 @@ section h3 {
   color: #fff;
   font-size: 12px;
   position: absolute;
+  bottom: 5px; 
 }
 
 .gallery-note {
