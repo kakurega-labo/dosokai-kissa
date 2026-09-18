@@ -104,6 +104,10 @@ section h3 {
   padding: 0;
 }
 
+.status {
+  position: relative;
+}
+
 .menu {
   background-repeat: no-repeat;
   background-size: cover;
