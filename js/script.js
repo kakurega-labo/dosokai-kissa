@@ -1,199 +1,236 @@
-//js/script.js
-
 const statusText = {
-      green: '混雑なし',
-      yellow: 'やや混雑',
-      red: '大変混雑'
-    };
+  green: '混雑なし',
+  yellow: 'やや混雑',
+  red: '大変混雑'
+};
 
-    const display = document.getElementById('status-display');
+const display = document.getElementById('status-display');
 
-    if (display) {
-      if (location.protocol === 'file:') {
-        const localStatus = 'green'; 
-        display.textContent = statusText[localStatus] || '不明';
-        display.classList.add(`status-${localStatus}`);
-      } else {
-        fetch('data/status.json')
-          .then(res => res.json())
-          .then(data => {
-            display.textContent = statusText[data.status] || '不明';
-            display.classList.add(`status-${data.status}`);
-          })
-          .catch(err => {
-            if (display) display.textContent = '取得失敗';
-          });
-      }
-    }
+if (display) {
+  if (location.protocol === 'file:') {
+    const localStatus = 'green'; 
+    display.textContent = statusText[localStatus] || '不明';
+    display.classList.add(`status-${localStatus}`);
+  } else {
+    fetch('data/status.json')
+      .then(res => res.json())
+      .then(data => {
+        display.textContent = statusText[data.status] || '不明';
+        display.classList.add(`status-${data.status}`);
+      })
+      .catch(err => {
+        if (display) display.textContent = '取得失敗';
+      });
+  }
+}
 
-    let currentSlide = 0;
-    function setSlide(index) {
-      const slides = document.querySelector('.slides');
-      const dots = document.querySelectorAll('.dot');
-      if (!slides) return;
-      currentSlide = index;
-      slides.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach(dot => dot.classList.remove('active'));
-      if (dots[index]) dots[index].classList.add('active');
-    }
+let currentSlide = 0;
+const slidesContainer = document.querySelector('.slides');
+const originalSlides = slidesContainer ? Array.from(slidesContainer.querySelectorAll('img')) : [];
+const totalOriginalSlides = originalSlides.length;
 
-    function prevSlide() {
-      const totalSlides = document.querySelectorAll('.slides img').length;
-      if (totalSlides === 0) return;
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      setSlide(currentSlide);
-    }
+// 無限ループ用に1枚目の画像のクローンを末尾に追加
+if (slidesContainer && totalOriginalSlides > 1) {
+  const firstClone = originalSlides[0].cloneNode(true);
+  slidesContainer.appendChild(firstClone);
+}
 
-    function nextSlide() {
-      const totalSlides = document.querySelectorAll('.slides img').length;
-      if (totalSlides === 0) return;
-      currentSlide = (currentSlide + 1) % totalSlides;
-      setSlide(currentSlide);
-    }
+function updateDots(index) {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach(dot => dot.classList.remove('active'));
+  const activeIndex = index % totalOriginalSlides;
+  if (dots[activeIndex]) dots[activeIndex].classList.add('active');
+}
 
-    setSlide(0);
+function setSlide(index) {
+  if (!slidesContainer) return;
+  currentSlide = index;
+  slidesContainer.style.transition = 'transform 0.5s ease-in-out';
+  slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+  updateDots(index);
+}
 
-    setInterval(() => {
+function nextSlide() {
+  if (!slidesContainer || totalOriginalSlides === 0) return;
+  currentSlide++;
+  slidesContainer.style.transition = 'transform 0.5s ease-in-out';
+  slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+  updateDots(currentSlide);
+
+  // 最後のクローン画像に移動したら、アニメーション終了後に瞬時に先頭(0)へリセット
+  if (currentSlide === totalOriginalSlides) {
+    setTimeout(() => {
+      slidesContainer.style.transition = 'none';
+      currentSlide = 0;
+      slidesContainer.style.transform = `translateX(0%)`;
+    }, 500);
+  }
+}
+
+function prevSlide() {
+  if (!slidesContainer || totalOriginalSlides === 0) return;
+  if (currentSlide === 0) {
+    // 先頭から戻る場合は瞬時に末尾(クローン)に移動させてから前へスライド
+    slidesContainer.style.transition = 'none';
+    currentSlide = totalOriginalSlides;
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // リフローを発生させてからアニメーション付きで移動
+    void slidesContainer.offsetWidth;
+    
+    currentSlide--;
+    slidesContainer.style.transition = 'transform 0.5s ease-in-out';
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+  } else {
+    currentSlide--;
+    slidesContainer.style.transition = 'transform 0.5s ease-in-out';
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+  updateDots(currentSlide);
+}
+
+setSlide(0);
+
+setInterval(() => {
+  nextSlide();
+}, 5000);
+
+let startX = 0;
+const slider = document.querySelector('.slider');
+
+if (slider) {
+  slider.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+    if (diff > 50) {
+      prevSlide();
+    } else if (diff < -50) {
       nextSlide();
-    }, 5000);
-   
-    let startX = 0;
-    const slider = document.querySelector('.slider');
-
-    if (slider) {
-      slider.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-      });
-
-      slider.addEventListener('touchend', (e) => {
-        const endX = e.changedTouches[0].clientX;
-        const diff = endX - startX;
-        if (diff > 50) {
-          prevSlide();
-        } else if (diff < -50) {
-          nextSlide();
-        }
-      });
     }
+  });
+}
 
+const toTopBtn = document.getElementById("toTopBtn");
 
-    const toTopBtn = document.getElementById("toTopBtn");
-
-    if (toTopBtn) {
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          toTopBtn.style.display = "block";
-        } else {
-          toTopBtn.style.display = "none";
-        }
-      });
-
-      toTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
+if (toTopBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      toTopBtn.style.display = "block";
+    } else {
+      toTopBtn.style.display = "none";
     }
+  });
 
-  function checkOpenNow() {
-   const openNowMsg = document.getElementById("openNowMessage");
-   if (!openNowMsg) return;
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
-   const now = new Date();
-   const openPeriods = [
-     { date: "2026-09-14", start: "12:00", end: "15:00" },   
-     { date: "2026-09-19", start: "10:00", end: "16:00" },
-     { date: "2026-09-20", start: "10:00", end: "16:00" },
-   ];
+function checkOpenNow() {
+  const openNowMsg = document.getElementById("openNowMessage");
+  if (!openNowMsg) return;
 
-   const pad = n => n.toString().padStart(2, "0");
-   const nowDateStr = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
-   const nowTimeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  const now = new Date();
+  const openPeriods = [
+    { date: "2026-09-14", start: "12:00", end: "15:00" },   
+    { date: "2026-09-19", start: "10:00", end: "16:00" },
+    { date: "2026-09-20", start: "10:00", end: "16:00" },
+  ];
 
-   const period = openPeriods.find(p => p.date === nowDateStr &&
-     nowTimeStr >= p.start && nowTimeStr <= p.end
-   );
+  const pad = n => n.toString().padStart(2, "0");
+  const nowDateStr = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
+  const nowTimeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
 
-   openNowMsg.classList.remove('status-green', 'status-red');
+  const period = openPeriods.find(p => p.date === nowDateStr &&
+    nowTimeStr >= p.start && nowTimeStr <= p.end
+  );
 
-   if (period) {
-     openNowMsg.textContent = '開催中';
-     openNowMsg.classList.add('status-green');
-   } else {
-     openNowMsg.textContent = '準備中';
-     openNowMsg.classList.add('status-red');
-   }
- }
+  openNowMsg.classList.remove('status-green', 'status-red');
 
- checkOpenNow();
- setInterval(checkOpenNow, 10000);
+  if (period) {
+    openNowMsg.textContent = '開催中';
+    openNowMsg.classList.add('status-green');
+  } else {
+    openNowMsg.textContent = '準備中';
+    openNowMsg.classList.add('status-red');
+  }
+}
 
- function scrollToSection(id) {
-   const target = document.querySelector(`.${id}`) || document.getElementById(id);
-   if (target) {
-     window.scrollTo({
-       top: target.offsetTop - 85,
-       behavior: 'smooth'
-     });
-   }
- }
+checkOpenNow();
+setInterval(checkOpenNow, 10000);
 
- const hamburgerBtn = document.getElementById("hamburgerBtn");
- const hamburgerMenu = document.getElementById("hamburgerMenu");
+function scrollToSection(id) {
+  const target = document.querySelector(`.${id}`) || document.getElementById(id);
+  if (target) {
+    window.scrollTo({
+      top: target.offsetTop - 85,
+      behavior: 'smooth'
+    });
+  }
+}
 
- if (hamburgerBtn && hamburgerMenu) {
-   hamburgerBtn.addEventListener("click", () => {
-     hamburgerMenu.classList.toggle("show");
-     document.body.classList.toggle("menu-opened");
-   });
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const hamburgerMenu = document.getElementById("hamburgerMenu");
 
-   document.addEventListener("click", function (e) {
-     const isMenu = hamburgerMenu.contains(e.target);
-     const isButton = hamburgerBtn.contains(e.target);
+if (hamburgerBtn && hamburgerMenu) {
+  hamburgerBtn.addEventListener("click", () => {
+    hamburgerMenu.classList.toggle("show");
+    document.body.classList.toggle("menu-opened");
+  });
 
-     if (!isMenu && !isButton && hamburgerMenu.classList.contains("show")) {
-       hamburgerMenu.classList.remove("show");
-       document.body.classList.remove("menu-opened");
-     }
-   });
- }
+  document.addEventListener("click", function (e) {
+    const isMenu = hamburgerMenu.contains(e.target);
+    const isButton = hamburgerBtn.contains(e.target);
 
- const closeMenuBtn = document.querySelector(".close-menu-btn");
+    if (!isMenu && !isButton && hamburgerMenu.classList.contains("show")) {
+      hamburgerMenu.classList.remove("show");
+      document.body.classList.remove("menu-opened");
+    }
+  });
+}
 
- if (closeMenuBtn && hamburgerMenu) {
-   closeMenuBtn.addEventListener("click", () => {
-     hamburgerMenu.classList.remove("show");
-     document.body.classList.remove("menu-opened");
-   });
- }
+const closeMenuBtn = document.querySelector(".close-menu-btn");
 
- document.querySelectorAll("#hamburgerMenu button").forEach(btn => {
-   btn.addEventListener("click", () => {
-     if (hamburgerMenu) {
-       hamburgerMenu.classList.remove("show");
-       document.body.classList.remove("menu-opened");
-     }
-   });
- });
+if (closeMenuBtn && hamburgerMenu) {
+  closeMenuBtn.addEventListener("click", () => {
+    hamburgerMenu.classList.remove("show");
+    document.body.classList.remove("menu-opened");
+  });
+}
 
- document.addEventListener('input', function(e) {
-   if (e.target && e.target.id === 'festivalSearch') {
-     const keyword = e.target.value.trim().toLowerCase();
-     const filtered = [];
+document.querySelectorAll("#hamburgerMenu button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (hamburgerMenu) {
+      hamburgerMenu.classList.remove("show");
+      document.body.classList.remove("menu-opened");
+    }
+  });
+});
 
-     FES_DATA.forEach(floor => {
-       const matchedStalls = floor.stalls.filter(stall =>
-         stall.name.toLowerCase().includes(keyword) ||
-         stall.place.toLowerCase().includes(keyword) ||
-         stall.group.toLowerCase().includes(keyword)
-       );
-       if (matchedStalls.length > 0) {
-         filtered.push({
-           floor: floor.floor,
-           stalls: matchedStalls
-         });
-       }
-     });
+document.addEventListener('input', function(e) {
+  if (e.target && e.target.id === 'festivalSearch') {
+    const keyword = e.target.value.trim().toLowerCase();
+    const filtered = [];
 
-     currentFestivalPage = 1;
-     renderFestivalPage(filtered.length > 0 ? filtered : FES_DATA, currentFestivalPage);
-   }
- });
+    FES_DATA.forEach(floor => {
+      const matchedStalls = floor.stalls.filter(stall =>
+        stall.name.toLowerCase().includes(keyword) ||
+        stall.place.toLowerCase().includes(keyword) ||
+        stall.group.toLowerCase().includes(keyword)
+      );
+      if (matchedStalls.length > 0) {
+        filtered.push({
+          floor: floor.floor,
+          stalls: matchedStalls
+        });
+      }
+    });
+
+    currentFestivalPage = 1;
+    renderFestivalPage(filtered.length > 0 ? filtered : FES_DATA, currentFestivalPage);
+  }
+});
