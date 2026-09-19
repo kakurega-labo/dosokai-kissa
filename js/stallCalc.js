@@ -5,7 +5,7 @@ const STALL_MENU = [
   { name: "かけそば・うどん", price: 250 },
   { name: "いそべ焼き(3個入)", price: 150 },
   { name: "焼き鳥(各1本)", price: 100 },
-  { name: "焼き鳥(5本セット)", price: 400 },
+  { name: "ポップコーン", price: 100 },
   { name: "たこ焼き(3個入)", price: 50 },
   { name: "ドリンク(各1個)", price: 50 }
 ];
