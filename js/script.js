@@ -133,8 +133,8 @@ function checkOpenNow() {
   const now = new Date();
   const openPeriods = [
     { date: "2026-09-14", start: "12:00", end: "15:00" },   
-    { date: "2026-09-19", start: "09:00", end: "16:00" },
-    { date: "2026-09-20", start: "09:00", end: "16:00" },
+    { date: "2026-09-19", start: "09:00", end: "15:30" },
+    { date: "2026-09-20", start: "09:00", end: "15:30" },
   ];
 
   const pad = n => n.toString().padStart(2, "0");
